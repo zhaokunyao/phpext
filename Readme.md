@@ -8,6 +8,7 @@
 ### ./ext_skel  --extname=demo  --proto=./demo.def
 ###  To use your new extension, you will have to execute the following steps:
   1. $ cd ..
+  1.5 $ ./configure --prefix=/home/xxxx/php && make && make install  
   2. $ vi ext/demo/config.m4
   2.2  rm autom4te.cache -rf   
   3. $ ./buildconf   会重新生成./configure文件
@@ -24,4 +25,7 @@
 ## 内存泄露check 以及其它的check(都有啥)
 ## 性能评估
 ## 修改原有的php函数，使其成为扩展函数的封装， 即[适配器模式]。 
-## 扩展上线。
+## 编译为so
+cd ext/demo/ && /home/xxxx/php/bin/phpize &&  ./configure  --enable-demo && make   这时候就可以得到 demo.so扩展了。
+## 扩展上线
+
